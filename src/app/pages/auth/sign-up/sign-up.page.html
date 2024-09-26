@@ -1,0 +1,50 @@
+<app-header backButton="/auth" title="Resgistro Usuario"></app-header> 
+
+<ion-content>
+
+  <div class="d-flex-center">
+  
+    <form [formGroup]="form" class="auth-form" (ngSubmit)="submit()"  (keypress.enter)="submit()">
+      <app-logo></app-logo>
+
+                  <!--nombre-->
+
+          <app-custom-input   
+      autocomplete="name"
+       icon="person-outline" 
+       [control]="form.controls.name" 
+       type="text" 
+       label="Nombre">
+       </app-custom-input>
+
+
+                  <!--email-->
+
+      <app-custom-input   
+      autocomplete="email"
+       icon="mail-outline" 
+       [control]="form.controls.email" 
+       type="email" 
+       label="Correo">
+       </app-custom-input>
+
+                  <!--contraseña-->
+       
+      <app-custom-input 
+      icon="lock-closed-outline"
+      [control]="form.controls.password"
+      type="password"
+      label="contraseña" 
+      
+      ></app-custom-input>
+  
+       
+
+       <ion-button  expand="block" mode="ios" class="submit" type="submit" [disabled]="form.invalid">
+        Registrarse
+        <ion-icon slot="end" name="person-add-outline"></ion-icon>
+       </ion-button>
+
+       
+
+    </form>
